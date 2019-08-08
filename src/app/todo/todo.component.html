@@ -1,0 +1,21 @@
+<main>
+  <h3>TODO List</h3>
+  <p>A place to store your todos</p>
+  <input placeholder="Filter your to-do's" />
+  <div *ngFor="let task of todoList; index as i">
+    <section>
+      <div [ngClass]="'tasks'">
+        <p [ngClass]="'taskParagraph'">{{ i + 1 }}.</p>
+        <button *ngIf="!task.completed" class="completeButton">
+          Complete
+        </button>
+        <p [ngClass]="{ taskCompleted: task.completed }">{{ task.task }}</p>
+      </div>
+      <div [ngClass]="'tasks'">
+        <i class="fas fa-dumpster-fire"></i>
+      </div>
+    </section>
+  </div>
+  <input placeholder="Add your to-do" />
+  <button>Add</button>
+</main>
